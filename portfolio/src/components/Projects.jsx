@@ -57,6 +57,13 @@ const Projects = () => {
                 >
                   Live Link
                 </a>
+                <a
+                  className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500 cursor-pointer"
+                  href={project.github}
+                  target="_blank"
+                >
+                  Github
+                </a>
               </div>
             </motion.div>
           </div>

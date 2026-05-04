@@ -50,6 +50,7 @@ technologies: [
 "Tailwind CSS",
 ],
 link: "https://leetcode-nextjs-clone-vafh.vercel.app/",
+github: "https://github.com/akshaydeepakpawar/leetcode-nextjs-clone",
 },
 {
 title: "AI Chat Application",
@@ -67,6 +68,7 @@ technologies: [
 "shadcn/ui",
 ],
 link: "https://t3-chat-t395.vercel.app/",
+github: "https://github.com/akshaydeepakpawar/t3-chat",
 },
 {
 title: "Movie Website",
@@ -75,6 +77,7 @@ description:
 "A responsive movie browsing app built with React and a movie database API. Users can search movies, view details, and explore results with a clean UI.",
 technologies: ["React", "REST API", "CSS"],
 link: "https://akshay-movies.netlify.app/",
+github: "https://github.com/akshaydeepakpawar/movie-website",
 },
 ];
 
