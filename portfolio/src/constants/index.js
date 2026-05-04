@@ -1,6 +1,6 @@
-import project1 from "../assets/myprojects/project-1.webp";
-import project2 from "../assets/myprojects/project-2.webp";
-import project3 from "../assets/myprojects/project-3.webp";
+import project1 from "../assets/myprojects/Project-1.webp";
+import project2 from "../assets/myprojects/Project-2.webp";
+import project3 from "../assets/myprojects/Project-3.webp";
 
 export const Hero_content = `
 Full Stack Developer skilled in JavaScript, TypeScript, and Next.js, with a strong foundation in Data Structures and Algorithms. Hands-on experience in building
