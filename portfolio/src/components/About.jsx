@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../assets/about.webp";
+import aboutImg from "../assets/About.webp";
 import { About_text } from "../constants";
 import { motion } from "framer-motion";
 
