@@ -1,75 +1,86 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/myprojects/project-1.webp";
+import project2 from "../assets/myprojects/project-2.webp";
+import project3 from "../assets/myprojects/project-3.webp";
 
-export const Hero_content = `I am a skilled Full Stack Web Developer with expertise in the MERN stack, capable of building dynamic, responsive, and user-friendly web applications. Proficient in front-end design with React.js and Tailwind CSS, and back-end development with Node.js, Express.js, and MongoDB, I follow industry standards to deliver high-quality, scalable solutions.`;
+export const Hero_content = `
+Full Stack Developer skilled in JavaScript, TypeScript, and Next.js, with a strong foundation in Data Structures and Algorithms. Hands-on experience in building
+scalable web applications and developing efficient APIs using modern technologies. Proficient in database design, clean architecture, and writing high-quality,
+maintainable code. Eager to contribute to real-world applications and grow as a software engineer.`;
 
-export const About_text = `I am a final-year Computer Engineering student at Terna Engineering College, Nerul, Navi Mumbai, and a passionate Full Stack Web Developer with expertise in the MERN (MongoDB, Express.js, React.js, Node.js) stack. With strong proficiency in building dynamic, responsive, and user-friendly web applications, I have developed a deep understanding of industry standards and best practices. My experience spans front-end design, using technologies like Tailwind CSS and React.js, to back-end development with Node.js and Express.js, as well as database management with MongoDB and SQL. Additionally, my commitment to continuous learning and practical experience in web development ensures I deliver high-quality, scalable solutions tailored to meet business objectives.`;
+export const About_text = `
+I’m a Full Stack Developer who enjoys building real-world applications from scratch and understanding how things work under the hood. I’ve worked on projects like a coding platform with real-time code execution and an AI chat application integrating multiple models.
+
+I like solving problems, improving performance, and writing code that’s clean and easy to maintain. Along the way, I’ve developed a strong interest in backend systems, APIs, and scalable architecture.
+
+Currently, I’m focused on sharpening my problem-solving skills and building projects that push me beyond my comfort zone as I work toward becoming a better software engineer.
+`;
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
-  },
-  {
-    year: "2022 - 2023",
-    role: "Frontend Developer",
-    company: "Adobe",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
-  },
-  {
-    year: "2021 - 2022",
+    year: "2023",
     role: "Full Stack Developer",
-    company: "Facebook",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  },
-  {
-    year: "2020 - 2021",
-    role: "Software Engineer",
-    company: "Paypal",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-    technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+    company: "Prodigy InfoTech",
+    description: `Developed responsive user interfaces using React.js, improving overall user experience and application performance Built and integrated RESTful APIs to enable efficient communication between frontend and backend systems Collaborated on feature implementation, debugging, and code optimization, ensuring clean and maintainable code`,
+    technologies: [
+      "Javascript",
+      "React.js",
+      "Express.js",
+      "mongoDB",
+      "Frame Motions",
+    ],
+    cretificate:
+      "https://www.linkedin.com/in/akshay-pawar-5b4b5819a/overlay/Position/2223215646/treasury/?profileId=ACoAAC7M8lgBfHALKa0slgCn7Eupo4Q7_u57DoA",
   },
 ];
 
 export const PROJECTS = [
-  {
-    title: "E-Commerce Website",
-    image: project1,
-    description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
-  },
-  {
-    title: "Task Management App",
-    image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
-  },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Blogging Platform",
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
-  },
+{
+title: "Full-Stack Coding Platform",
+image: project1, // replace with actual screenshot
+description:
+"A full-stack coding platform inspired by LeetCode, built with Next.js and TypeScript. Users can solve coding problems, run code in real-time, and track their progress. Includes secure authentication, submission history, and admin features for managing problems and test cases.",
+technologies: [
+"Next.js",
+"TypeScript",
+"React",
+"Node.js",
+"PostgreSQL",
+"Prisma",
+"Clerk",
+"Judge0 API",
+"Tailwind CSS",
+],
+link: "https://leetcode-nextjs-clone-vafh.vercel.app/",
+},
+{
+title: "AI Chat Application",
+image: project2,
+description:
+"A full-stack AI chat application with real-time streaming responses. Integrated 30+ AI models using OpenRouter with dynamic model selection. Features include authentication, chat history, search, and persistent message storage using Prisma and PostgreSQL.",
+technologies: [
+"Next.js",
+"React",
+"Prisma",
+"PostgreSQL",
+"OpenRouter API",
+"AI SDK",
+"Tailwind CSS",
+"shadcn/ui",
+],
+link: "https://t3-chat-t395.vercel.app/",
+},
+{
+title: "Movie Website",
+image: project3,
+description:
+"A responsive movie browsing app built with React and a movie database API. Users can search movies, view details, and explore results with a clean UI.",
+technologies: ["React", "REST API", "CSS"],
+link: "https://akshay-movies.netlify.app/",
+},
 ];
 
+
 export const CONTACT = {
-  address: "767 Fifth Avenue, New York, NY 10153 ",
-  phoneNo: "+12 4555 666 00 ",
-  email: "me@example.com",
+  address: `Navi Mumbai, Maharashtra, India`,
+  phoneNo: "+91 9326182557 ",
+  email: "ap3690700@gmail.com",
 };
