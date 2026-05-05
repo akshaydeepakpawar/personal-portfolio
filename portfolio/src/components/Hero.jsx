@@ -50,7 +50,7 @@ const Hero = () => {
               {Hero_content}
             </motion.p>
             <motion.button
-              variants={container(1.5)}
+              variants={container(1)}
               initial="hidden"
               animate="visible"
               onClick={handleDownload}
