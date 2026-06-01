@@ -71,13 +71,24 @@ link: "https://t3-chat-t395.vercel.app/",
 github: "https://github.com/akshaydeepakpawar/t3-chat",
 },
 {
-title: "Movie Website",
+title: "StackSpend",
 image: project3,
 description:
-"A responsive movie browsing app built with React and a movie database API. Users can search movies, view details, and explore results with a clean UI.",
-technologies: ["React", "REST API", "CSS"],
-link: "https://akshay-movies.netlify.app/",
-github: "https://github.com/akshaydeepakpawar/movie-website",
+"StackSpend is a full-stack AI spend auditing platform that helps developers, startups, and engineering teams analyze their AI tool subscriptions and identify cost-saving opportunities. Users can generate personalized audit reports, receive AI-generated insights, track historical audits, export reports as PDFs, and share results through public report links. Built with Next.js, PostgreSQL, Prisma, OpenRouter, and GitHub Actions CI/CD.",
+technologies: [
+  "Next.js",
+  "JavaScript",
+  "PostgreSQL",
+  "Prisma ORM",
+  "Tailwind CSS",
+  "OpenRouter",
+  "Resend",
+  "Vitest",
+  "GitHub Actions",
+  "Vercel"
+],
+link: "https://stackspend-kappa.vercel.app/",
+github: "https://github.com/akshaydeepakpawar/stackspend",
 },
 ];
 
