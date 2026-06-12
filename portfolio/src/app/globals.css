@@ -20,8 +20,23 @@
   --color-surface-100: #f1f5f9;
   --color-surface-200: #e2e8f0;
   --color-surface-800: #1e293b;
-  --color-surface-900: #0f172a;
+  --color-surface-900: #0b1120;
   --color-surface-950: #020617;
+
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-reverse: float 6s ease-in-out infinite reverse;
+  --animate-pulse-glow: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-12px) translateX(6px); }
+  66% { transform: translateY(6px) translateX(-4px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
 }
 
 @layer base {
@@ -37,6 +52,23 @@
     background-color: var(--color-accent-500);
     color: white;
   }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface-950);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-800);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+  }
 }
 
 @layer utilities {
@@ -49,11 +81,11 @@
   }
 
   .glass {
-    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+    @apply border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl;
   }
 
   .glass-hover {
-    @apply transition-all duration-300 hover:border-accent-500/30 hover:bg-accent-500/5 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.3)];
+    @apply transition-all duration-300 hover:border-accent-500/30 hover:bg-accent-500/[0.04] hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.15)];
   }
 
   .gradient-border {
@@ -78,6 +110,11 @@
   }
 
   .section-heading {
-    @apply mb-16 text-center font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
+    @apply mb-16 text-center font-display text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl;
+  }
+
+  .bg-grid {
+    background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }
