@@ -3,74 +3,91 @@
 import Image from "next/image";
 import { PROJECTS } from "@/constants";
 import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <div className="border-b border-neutral-800 pb-4">
+    <section id="projects" className="section-padding">
       <motion.h2
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
-        className="my-20 border-b border-neutral-900 pb-4 text-center text-4xl"
+        className="section-heading"
       >
-        Projects
+        Featured <span className="text-gradient">Projects</span>
       </motion.h2>
-      <div>
+
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project, index) => (
-          <div className="mb-8 flex flex-wrap lg:justify-center" key={index}>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1 }}
-              className="w-full lg:w-1/2"
-            >
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group glass rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-10px_rgba(99,102,241,0.2)]"
+          >
+            <div className="relative aspect-video overflow-hidden">
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-surface-950/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <Image
                 src={project.image}
                 alt={project.title}
-                width={450}
-                height={450}
-                className="mb-6 rounded-xl"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-            </motion.div>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1 }}
-              className="w-full max-w-xl lg:w-1/2"
-            >
-              <h6 className="mb-2 font-semibold">{project.title}</h6>
-              <p className="mb-4 text-neutral-400">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
+            </div>
+
+            <div className="p-5">
+              <h3 className="font-display text-lg font-semibold text-white">
+                {project.title}
+              </h3>
+
+              <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-neutral-400">
+                {project.description}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {project.technologies.slice(0, 5).map((tech) => (
                   <span
-                    key={index}
-                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-400"
+                    key={tech}
+                    className="rounded-full bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-neutral-400"
                   >
                     {tech}
                   </span>
                 ))}
+                {project.technologies.length > 5 && (
+                  <span className="rounded-full bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-neutral-500">
+                    +{project.technologies.length - 5}
+                  </span>
+                )}
               </div>
-              <div className="mt-3">
+
+              <div className="mt-5 flex items-center gap-3 border-t border-white/5 pt-4">
                 <a
-                  className="mr-2 inline-block cursor-pointer rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500"
                   href={project.link}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-accent-400 transition-colors hover:text-accent-300"
                 >
-                  Live Link
+                  <FaExternalLinkAlt className="h-3 w-3" />
+                  Live Demo
                 </a>
                 <a
-                  className="mr-2 inline-block cursor-pointer rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500"
                   href={project.github}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-neutral-400 transition-colors hover:text-white"
                 >
-                  Github
+                  <FaGithub className="h-3 w-3" />
+                  Source Code
                 </a>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

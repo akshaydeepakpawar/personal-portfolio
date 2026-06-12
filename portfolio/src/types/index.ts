@@ -4,7 +4,7 @@ export interface Experience {
   company: string;
   description: string;
   technologies: string[];
-  cretificate: string;
+  cretificate?: string;
 }
 
 export interface Project {
@@ -20,4 +20,10 @@ export interface Contact {
   address: string;
   phoneNo: string;
   email: string;
+}
+
+export interface Skill {
+  name: string;
+  level: number;
+  icon?: string;
 }

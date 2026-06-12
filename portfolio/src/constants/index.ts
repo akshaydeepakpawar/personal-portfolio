@@ -1,4 +1,4 @@
-import type { Experience, Project, Contact } from "@/types";
+import type { Experience, Project, Contact, Skill } from "@/types";
 
 export const Hero_content = `Full Stack Developer skilled in JavaScript, TypeScript, and Next.js, with a strong foundation in Data Structures and Algorithms. Hands-on experience in building scalable web applications and developing efficient APIs using modern technologies. Proficient in database design, clean architecture, and writing high-quality, maintainable code. Eager to contribute to real-world applications and grow as a software engineer.`;
 
@@ -13,13 +13,13 @@ export const EXPERIENCES: Experience[] = [
     year: "2023",
     role: "Full Stack Developer",
     company: "Prodigy InfoTech",
-    description: `Developed responsive user interfaces using React.js, improving overall user experience and application performance Built and integrated RESTful APIs to enable efficient communication between frontend and backend systems Collaborated on feature implementation, debugging, and code optimization, ensuring clean and maintainable code`,
+    description: `Developed responsive user interfaces using React.js, improving overall user experience and application performance. Built and integrated RESTful APIs to enable efficient communication between frontend and backend systems. Collaborated on feature implementation, debugging, and code optimization, ensuring clean and maintainable code.`,
     technologies: [
-      "Javascript",
+      "JavaScript",
       "React.js",
       "Express.js",
-      "mongoDB",
-      "Frame Motions",
+      "MongoDB",
+      "Framer Motion",
     ],
     cretificate:
       "https://www.linkedin.com/in/akshay-pawar-5b4b5819a/overlay/Position/2223215646/treasury/?profileId=ACoAAC7M8lgBfHALKa0slgCn7Eupo4Q7_u57DoA",
@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
     title: "StackSpend",
     image: "/images/myprojects/Project-3.webp",
     description:
-      "StackSpend is a full-stack AI spend auditing platform that helps developers, startups, and engineering teams analyze their AI tool subscriptions and identify cost-saving opportunities. Users can generate personalized audit reports, receive AI-generated insights, track historical audits, export reports as PDFs, and share results through public report links. Built with Next.js, PostgreSQL, Prisma, OpenRouter, and GitHub Actions CI/CD.",
+      "StackSpend is a full-stack AI spend auditing platform that helps developers, startups, and engineering teams analyze their AI tool subscriptions and identify cost-saving opportunities. Users can generate personalized audit reports, receive AI-generated insights, track historical audits, export reports as PDFs, and share results through public report links.",
     technologies: [
       "Next.js",
       "JavaScript",
@@ -88,6 +88,23 @@ export const PROJECTS: Project[] = [
 
 export const CONTACT: Contact = {
   address: "Navi Mumbai, Maharashtra, India",
-  phoneNo: "+91 9326182557 ",
+  phoneNo: "+91 9326182557",
   email: "ap3690700@gmail.com",
 };
+
+export const SKILLS: Skill[] = [
+  { name: "JavaScript", level: 90 },
+  { name: "TypeScript", level: 85 },
+  { name: "React", level: 90 },
+  { name: "Next.js", level: 88 },
+  { name: "Node.js", level: 85 },
+  { name: "Express.js", level: 82 },
+  { name: "PostgreSQL", level: 80 },
+  { name: "Prisma", level: 78 },
+  { name: "MongoDB", level: 75 },
+  { name: "Tailwind CSS", level: 92 },
+  { name: "Docker", level: 65 },
+  { name: "Git", level: 85 },
+  { name: "C++", level: 70 },
+  { name: "Python", level: 60 },
+];

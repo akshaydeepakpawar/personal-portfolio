@@ -1,80 +1,85 @@
 "use client";
 
+import { SKILLS } from "@/constants";
 import { motion } from "framer-motion";
-import { RiReactjsLine, RiJavascriptFill } from "react-icons/ri";
-import { TbBrandNextjs } from "react-icons/tb";
+import { FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaPython } from "react-icons/fa";
 import {
-  SiMongodb,
-  SiExpress,
   SiTypescript,
+  SiNextdotjs,
+  SiExpress,
   SiPostgresql,
-  SiDocker,
   SiPrisma,
+  SiMongodb,
   SiTailwindcss,
-  SiGithub,
-  SiPostman,
-  SiLinux,
-  SiNetlify,
-  SiVercel,
   SiCplusplus,
 } from "react-icons/si";
-import { DiMysql } from "react-icons/di";
-import { FaNodeJs, FaGit } from "react-icons/fa";
-import { VscVscode } from "react-icons/vsc";
+import type { IconType } from "react-icons";
 
-const waveVariant = (delay: number) => ({
-  animate: {
-    y: [0, -15, 0],
-    transition: {
-      duration: 1.5,
-      ease: "easeInOut" as const,
-      repeat: Infinity,
-      delay,
-    },
-  },
-});
-
-const technologies = [
-  <RiJavascriptFill key="js" className="text-yellow-400" />,
-  <SiTypescript key="ts" className="text-blue-500" />,
-  <RiReactjsLine key="react" className="text-cyan-400" />,
-  <TbBrandNextjs key="next" />,
-  <FaNodeJs key="node" className="text-green-500" />,
-  <SiExpress key="express" />,
-  <SiMongodb key="mongo" className="text-green-500" />,
-  <SiPostgresql key="pg" className="text-blue-400" />,
-  <DiMysql key="mysql" className="text-[#2c7749]" />,
-  <SiPrisma key="prisma" />,
-  <SiDocker key="docker" className="text-blue-400" />,
-  <SiTailwindcss key="tw" className="text-cyan-400" />,
-  <SiCplusplus key="cpp" className="text-blue-600" />,
-  <FaGit key="git" className="text-orange-500" />,
-  <SiGithub key="gh" />,
-  <SiNetlify key="net" className="text-green-400" />,
-  <SiVercel key="vercel" />,
-  <SiPostman key="postman" className="text-orange-400" />,
-  <VscVscode key="vsc" className="text-blue-500" />,
-  <SiLinux key="linux" className="text-yellow-500" />,
-];
+const iconMap: Record<string, IconType> = {
+  JavaScript: FaJs,
+  TypeScript: SiTypescript,
+  React: FaReact,
+  "Next.js": SiNextdotjs,
+  "Node.js": FaNodeJs,
+  "Express.js": SiExpress,
+  PostgreSQL: SiPostgresql,
+  Prisma: SiPrisma,
+  MongoDB: SiMongodb,
+  "Tailwind CSS": SiTailwindcss,
+  Docker: FaDocker,
+  Git: FaGitAlt,
+  "C++": SiCplusplus,
+  Python: FaPython,
+};
 
 const Technologies = () => {
   return (
-    <div className="border-b border-neutral-800 pb-24">
-      <h2 className="my-20 text-center text-4xl">Technologies</h2>
+    <section id="skills" className="section-padding">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.5 }}
+        className="section-heading"
+      >
+        Skills &amp; <span className="text-gradient">Technologies</span>
+      </motion.h2>
 
-      <div className="flex flex-wrap items-center justify-center gap-6">
-        {technologies.map((icon, index) => (
-          <motion.div
-            key={index}
-            variants={waveVariant(index * 0.15)}
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-5 text-5xl"
-          >
-            {icon}
-          </motion.div>
-        ))}
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {SKILLS.map((skill, index) => {
+          const Icon = iconMap[skill.name];
+          return (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="group glass glass-hover rounded-xl p-4 text-center"
+            >
+              {Icon && (
+                <Icon className="mx-auto mb-3 h-8 w-8 text-neutral-400 transition-colors duration-300 group-hover:text-accent-400" />
+              )}
+              <h3 className="text-sm font-medium text-white">
+                {skill.name}
+              </h3>
+              <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/5">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: index * 0.05 + 0.3 }}
+                  className="h-full rounded-full bg-gradient-to-r from-accent-500 to-purple-500"
+                />
+              </div>
+              <span className="mt-1 block text-xs text-neutral-600">
+                {skill.level}%
+              </span>
+            </motion.div>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
 };
 

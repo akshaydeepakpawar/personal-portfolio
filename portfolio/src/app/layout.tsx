@@ -29,12 +29,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
-        <div className="fixed top-0 -z-10 h-full w-full">
-          <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    <html lang="en" className="scroll-smooth">
+      <body className="overflow-x-hidden bg-surface-950 font-sans text-neutral-300 antialiased selection:bg-accent-500 selection:text-white">
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-surface-950" />
+          <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-accent-500/10 blur-[120px]" />
+          <div className="absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-[100px]" />
+          <div className="absolute bottom-0 left-1/4 h-[300px] w-[300px] rounded-full bg-cyan-500/5 blur-[80px]" />
         </div>
-        <div className="container mx-auto px-8">{children}</div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </body>
     </html>
   );
