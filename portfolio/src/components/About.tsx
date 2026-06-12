@@ -1,6 +1,7 @@
-import React from "react";
-import aboutImg from "../assets/About.webp";
-import { About_text } from "../constants";
+"use client";
+
+import Image from "next/image";
+import { About_text } from "@/constants";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -18,12 +19,12 @@ const About = () => {
           className="w-full lg:w-1/2 lg:p-8"
         >
           <div className="flex items-center justify-center">
-            <img
-              loading="lazy"
+            <Image
               className="rounded-2xl"
-              width="400px"
-              src={aboutImg}
+              src="/images/About.webp"
               alt="about"
+              width={400}
+              height={400}
             />
           </div>
         </motion.div>
@@ -31,7 +32,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.5 }}
-          className="w-full flex justify-center items-center lg:w-1/2 lg:p-8"
+          className="flex w-full items-center justify-center lg:w-1/2 lg:p-8"
         >
           <div className="lg:justify-start">
             <p className="my-2 max-w-xl py-6">{About_text}</p>

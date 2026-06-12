@@ -1,14 +1,15 @@
-import React from "react";
-import { Hero_content } from "../constants";
-import profilePic from "../assets/Hero.jpg";
+"use client";
+
+import Image from "next/image";
+import { Hero_content } from "@/constants";
 import { motion } from "framer-motion";
 
-const container = (delay) => ({
+const container = (delay: number) => ({
   hidden: { x: -100, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    transition: { duration: 0.5, delay },
   },
 });
 
@@ -37,7 +38,7 @@ const Hero = () => {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-pink-300 vai-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
+              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
             >
               Full Stack Developer
             </motion.span>
@@ -54,7 +55,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               onClick={handleDownload}
-              className="mb-4 cursor-pointer group relative inline-flex items-center justify-center px-7 py-3 rounded-xl border border-neutral-700 bg-neutral-900 text-white font-medium tracking-wide overflow-hidden transition duration-300 hover:border-white hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]"
+              className="group relative mb-4 inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 px-7 py-3 font-medium tracking-wide text-white transition duration-300 hover:border-white hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Resume
@@ -62,26 +63,28 @@ const Hero = () => {
                   →
                 </span>
               </span>
-
-              {/* subtle shine effect */}
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                <span className="absolute -left-full top-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:left-full transition-all duration-700"></span>
+              <span className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+                <span className="absolute -left-full top-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-700 group-hover:left-full"></span>
               </span>
             </motion.button>
           </div>
         </div>
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex justify-center">
-            <motion.img
+            <motion.div
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="rounded-2xl"
-              width="450px"
-              src={profilePic}
-              alt="Akshay Pawar"
-              loading="lazy"
-            />
+            >
+              <Image
+                className="rounded-2xl"
+                src="/images/Hero.jpg"
+                alt="Akshay Pawar"
+                width={450}
+                height={450}
+                priority
+              />
+            </motion.div>
           </div>
         </div>
       </div>

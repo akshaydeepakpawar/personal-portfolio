@@ -1,5 +1,7 @@
-import React from "react";
-import { PROJECTS } from "../constants";
+"use client";
+
+import Image from "next/image";
+import { PROJECTS } from "@/constants";
 import { motion } from "framer-motion";
 
 const Projects = () => {
@@ -9,7 +11,7 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl border-b border-neutral-900 pb-4"
+        className="my-20 border-b border-neutral-900 pb-4 text-center text-4xl"
       >
         Projects
       </motion.h2>
@@ -22,10 +24,9 @@ const Projects = () => {
               transition={{ duration: 1 }}
               className="w-full lg:w-1/2"
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
-                loading="lazy"
                 width={450}
                 height={450}
                 className="mb-6 rounded-xl"
@@ -51,14 +52,14 @@ const Projects = () => {
               </div>
               <div className="mt-3">
                 <a
-                  className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500 cursor-pointer"
+                  className="mr-2 inline-block cursor-pointer rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500"
                   href={project.link}
                   target="_blank"
                 >
                   Live Link
                 </a>
                 <a
-                  className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500 cursor-pointer"
+                  className="mr-2 inline-block cursor-pointer rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-cyan-500"
                   href={project.github}
                   target="_blank"
                 >
