@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Technologies from "@/components/Technologies";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Technologies />
       <Experience />
       <Projects />
+      <Certifications />
       <Contact />
     </>
   );

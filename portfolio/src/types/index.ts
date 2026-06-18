@@ -26,6 +26,13 @@ export interface Stat {
   label: string;
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  year: string;
+  url: string;
+}
+
 export interface Contact {
   address: string;
   phoneNo: string;

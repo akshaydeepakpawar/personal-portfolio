@@ -1,10 +1,11 @@
-import type { Journey, Project, Contact, SkillCategory, Stat } from "@/types";
+import type { Journey, Project, Contact, SkillCategory, Stat, Certification } from "@/types";
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Journey", href: "#journey" },
   { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -56,7 +57,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     category: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "MySQL"],
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "Supabase"],
   },
   {
     category: "Tools & DevOps",
@@ -200,6 +201,21 @@ export const PROJECTS: Project[] = [
     link: "https://leetcode-nextjs-clone-vafh.vercel.app/",
     github: "https://github.com/akshaydeepakpawar/leetcode-nextjs-clone",
     featured: false,
+  },
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    title: "Database Management Systems (DBMS)",
+    issuer: "Scaler Topics",
+    year: "2026",
+    url: "https://moonshot.scaler.com/s/sl/vErSTR",
+  },
+  {
+    title: "Data Structures and Algorithms (DSA)",
+    issuer: "Code Help",
+    year: "2025",
+    url: "https://learn.codehelp.in/share-certificate?serialno=OEXFE7DO",
   },
 ];
 

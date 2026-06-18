@@ -24,6 +24,7 @@ import {
   SiMysql,
   SiLinux,
   SiVercel,
+  SiSupabase,
 } from "react-icons/si";
 import { FaHtml5, FaCss3 } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -53,6 +54,7 @@ const iconMap: Record<string, IconType> = {
   Postman: FaServer,
   Prisma: SiPrisma,
   Vercel: SiVercel,
+  Supabase: SiSupabase,
 };
 
 const categoryIcons: Record<string, IconType> = {
