@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
+import { useContactModal } from "@/hooks/use-contact-modal";
 
 const socialLinks = [
   { icon: FaGithub, href: "https://github.com/akshaydeepakpawar", label: "GitHub" },
@@ -21,6 +22,7 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const { open } = useContactModal();
   return (
     <motion.section
       id="contact"
@@ -96,13 +98,13 @@ const Contact = () => {
             </div>
 
             <div className="mt-6 text-center">
-              <a
-                href={`mailto:${CONTACT_INFO.email}?subject=Full-Stack Developer Opportunity`}
-                className="inline-flex items-center gap-2 rounded-xl bg-accent-500 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-accent-600 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.4)]"
+              <button
+                onClick={open}
+                className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-accent-500 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-accent-600 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.4)]"
               >
                 Send an Email
                 <FaArrowRight className="h-3 w-3" />
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>

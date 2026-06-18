@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akshaypawar.dev"),
@@ -101,7 +102,7 @@ export default function RootLayout({
           <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-purple-500/8 blur-[120px] animate-float" />
           <div className="absolute bottom-0 left-1/4 h-[400px] w-[400px] rounded-full bg-cyan-500/5 blur-[100px] animate-float-reverse" />
         </div>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
