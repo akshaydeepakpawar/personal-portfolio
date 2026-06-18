@@ -209,7 +209,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Database Management Systems (DBMS)",
     issuer: "Scaler Topics",
     year: "2026",
-    url: "https://moonshot.scaler.com/s/sl/vErSTR",
+    url: "https://moonshot.scaler.com/s/sl/vErSTR_Mbx",
   },
   {
     title: "Data Structures and Algorithms (DSA)",
