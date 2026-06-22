@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akshaypawar.dev"),
@@ -96,13 +97,22 @@ export default function RootLayout({
         />
       </head>
       <body className="overflow-x-hidden bg-surface-950 font-sans text-neutral-300 antialiased selection:bg-accent-500 selection:text-white">
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-surface-950" />
-          <div className="absolute left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-accent-500/8 blur-[160px] animate-pulse-glow" />
-          <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-purple-500/8 blur-[120px] animate-float" />
-          <div className="absolute bottom-0 left-1/4 h-[400px] w-[400px] rounded-full bg-cyan-500/5 blur-[100px] animate-float-reverse" />
+        {/* Dynamic background with animated particles */}
+        <div className="fixed inset-0 -z-10 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-surface-950 via-surface-950 to-surface-950">
+            <div className="absolute left-1/4 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-[120px] animate-pulse-glow" />
+            <div className="absolute right-1/4 bottom-0 h-[500px] w-[500px] translate-x-1/2 rounded-full bg-purple-500/10 blur-[100px] animate-float" />
+            <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[80px] animate-pulse-glow" />
+          </div>
+          {/* Subtle grid background */}
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
         </div>
-        <Providers>{children}</Providers>
+
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-500" />
+        </div>}>
+          <Providers>{children}</Providers>
+        </Suspense>
       </body>
     </html>
   );
